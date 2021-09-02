@@ -9,7 +9,7 @@ spec:
   - name: wp-kaniko
     image: vnovoselskiy/kaniko-executor:latest
     args: ["--context=git://github.com/novoselskiy/wp-image","--force",
-           "--destination=vnovoselskiy/wordpress:0.0.3"]
+           "--destination=vnovoselskiy/wordpress:0.0.4"]
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
