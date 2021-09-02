@@ -1,4 +1,4 @@
-FROM arm64v8/php:8.0-apache
+FROM php:8.0-apache
 
 RUN a2enmod rewrite
 
