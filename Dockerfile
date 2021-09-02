@@ -1,4 +1,4 @@
-FROM php:8.0.10-apache
+FROM arm64v8/php:8.0-apache
 
 RUN a2enmod rewrite
 
@@ -24,6 +24,5 @@ RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_UPS
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
-# grr, ENTRYPOINT resets CMD now
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
