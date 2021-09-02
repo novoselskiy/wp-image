@@ -3,13 +3,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: kaniko
+  name: wp-kaniko
 spec:
   containers:
-  - name: kaniko
+  - name: wp-kaniko
     image: vnovoselskiy/kaniko-executor:latest
     args: ["--context=git://github.com/novoselskiy/wp-image","--force",
-           "--destination=vnovoselskiy/wordpress:latest"]
+           "--destination=vnovoselskiy/wordpress:0.0.2"]
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
