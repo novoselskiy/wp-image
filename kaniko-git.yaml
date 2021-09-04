@@ -9,6 +9,7 @@ spec:
   - name: kaniko
     image: vnovoselskiy/kaniko-executor:latest
     args: ["--context=git://github.com/novoselskiy/wp-image","--force",
+           "--cache","--use-new-run",
            "--destination=vnovoselskiy/wordpress:latest"]
     volumeMounts:
       - name: kaniko-secret
