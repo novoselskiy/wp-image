@@ -26,6 +26,7 @@ RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_UPS
 	&& tar -xzf wordpress.tar.gz -C /usr/src/ \
         && unzip -q /wp-super-cache.1.9.4.zip -d /usr/src/wordpress/wp-content/plugins/ \
         && unzip -q /jetpack-boost.1.9.4.zip  -d /usr/src/wordpress/wp-content/plugins/ \
+        && unzip -q /w3-total-cache.2.3.3.zip -d /usr/src/wordpress/wp-content/plugins/ \
 	&& rm wordpress.tar.gz && rm /*.zip \
 	&& chown -R www-data:www-data /usr/src/wordpress
 
