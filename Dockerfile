@@ -15,9 +15,9 @@ RUN docker-php-ext-install bcmath exif gd mysqli zip intl opcache \
 
 VOLUME /var/www/html
 
-ENV WORDPRESS_VERSION 6.3-beta4
-ENV WORDPRESS_UPSTREAM_VERSION 6.3-beta4
-ENV WORDPRESS_SHA1 6995c76ab278839e52938e9e620475e12d8d3158
+ENV WORDPRESS_VERSION 6.3-RC3
+ENV WORDPRESS_UPSTREAM_VERSION 6.3-RC3
+ENV WORDPRESS_SHA1 7ed9f28b4d682d90229a2a72de792889467fe8a4
 
 ADD /plugins /
 
@@ -25,6 +25,7 @@ RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_UPS
 	&& echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c - \
 	&& tar -xzf wordpress.tar.gz -C /usr/src/ \
         && unzip -q /w3-total-cache.2.3.3.zip -d /usr/src/wordpress/wp-content/plugins/ \
+        && unzip -q /amazon-s3-and-cloudfront.3.2.4.zip -d /usr/src/wordpress/wp-content/plugins/ \
 	&& rm wordpress.tar.gz && rm /*.zip \
 	&& chown -R www-data:www-data /usr/src/wordpress
 
